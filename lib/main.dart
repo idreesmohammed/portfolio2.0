@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:idreesportfolio/bloc/on_hover_bloc.dart';
 import 'package:idreesportfolio/landing_page.dart';
 
 void main() {

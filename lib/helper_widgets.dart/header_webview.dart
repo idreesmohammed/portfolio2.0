@@ -8,7 +8,7 @@ class HeaderWebView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       height: 60,
       width: double.infinity,
       decoration: CustomStyles.headerDecoration,
@@ -18,12 +18,12 @@ class HeaderWebView extends StatelessWidget {
           const Spacer(),
           for (int i = 0; i < HelperClass.headerList.length; i++)
             Padding(
-              padding: EdgeInsets.only(right: 20.0),
+              padding: const EdgeInsets.only(right: 20.0),
               child: TextButton(
                   onPressed: () {},
                   child: Text(
                     HelperClass.headerList[i],
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                   )),
             )
         ],

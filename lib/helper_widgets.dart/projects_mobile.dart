@@ -55,7 +55,7 @@ class ProjectsMobileView extends StatelessWidget {
                 children: [
                   Text(
                     HelperClass.projectDescription[list]["title"],
-                    style: TextStyle(color: Colors.yellowAccent),
+                    style: const TextStyle(color: Colors.yellowAccent),
                   ),
                   const SizedBox(height: 5),
                   Expanded(
@@ -63,10 +63,10 @@ class ProjectsMobileView extends StatelessWidget {
                       HelperClass.projectDescription[list]["description"],
                       maxLines: 9,
                       overflow: TextOverflow.ellipsis,
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Align(
                     alignment: Alignment.bottomRight,
                     child: Image.asset(

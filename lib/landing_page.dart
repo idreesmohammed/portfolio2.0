@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:idreesportfolio/bloc/on_hover_bloc.dart';
-import 'package:idreesportfolio/bloc/on_hover_state.dart';
 import 'package:idreesportfolio/helper_widgets.dart/about_me_desktop.dart';
 import 'package:idreesportfolio/helper_widgets.dart/about_me_mobile.dart';
 import 'package:idreesportfolio/helper_widgets.dart/contact_me_mobile.dart';
@@ -14,8 +11,6 @@ import 'package:idreesportfolio/helper_widgets.dart/projects_mobile.dart';
 import 'package:idreesportfolio/helper_widgets.dart/projects_web.dart';
 import 'package:idreesportfolio/helper_widgets.dart/skills_mobile.dart';
 import 'package:idreesportfolio/helper_widgets.dart/skills_webview.dart';
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:js' as js;
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -32,7 +27,7 @@ class _LandingPageState extends State<LandingPage> {
     return LayoutBuilder(builder: (context, BoxConstraints boxConstraints) {
       print(boxConstraints);
       return Scaffold(
-        backgroundColor: Color(0xff021227),
+        backgroundColor: const Color(0xff021227),
         //0xff309543
         key: scaffoldKey,
         endDrawer: boxConstraints.maxWidth >= 600 ? null : const MobileDrawer(),

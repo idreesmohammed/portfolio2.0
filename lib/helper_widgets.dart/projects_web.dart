@@ -1,7 +1,5 @@
-import 'package:flip_card/flip_card_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:idreesportfolio/helper_class.dart';
-import 'dart:js' as js;
 
 class ProjectsWebView extends StatefulWidget {
   const ProjectsWebView({super.key});
@@ -71,7 +69,7 @@ class _ProjectsWebViewState extends State<ProjectsWebView> {
                 children: [
                   Text(
                     HelperClass.projectDescription[list]["title"],
-                    style: TextStyle(color: Colors.yellowAccent),
+                    style: const TextStyle(color: Colors.yellowAccent),
                   ),
                   const SizedBox(height: 5),
                   Expanded(
@@ -79,10 +77,10 @@ class _ProjectsWebViewState extends State<ProjectsWebView> {
                       HelperClass.projectDescription[list]["description"],
                       maxLines: 9,
                       overflow: TextOverflow.ellipsis,
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Align(
                     alignment: Alignment.bottomRight,
                     child: Image.asset(
