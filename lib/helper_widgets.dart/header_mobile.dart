@@ -13,9 +13,20 @@ class HeaderMobile extends StatelessWidget {
         decoration: CustomStyles.headerDecoration,
         child: Row(
           children: [
-            const Text("<Idrees/>"),
+            const Padding(
+              padding: EdgeInsets.only(left: 20),
+              child: Text(
+                "<Idrees/>",
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
             const Spacer(),
-            IconButton(onPressed: menuIcon, icon: const Icon(Icons.menu)),
+            IconButton(
+                onPressed: menuIcon,
+                icon: const Icon(
+                  Icons.menu,
+                  color: Colors.white,
+                )),
             const SizedBox(
               width: 15,
             )

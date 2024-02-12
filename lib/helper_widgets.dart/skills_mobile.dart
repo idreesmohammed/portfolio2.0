@@ -126,7 +126,7 @@ class _SkillsMobileViewState extends State<SkillsMobileView> {
                         children: [
                           Image.asset(
                               HelperClass.skillsAndDescription[list]["image"],
-                              height: 100),
+                              height: 80),
                           const SizedBox(height: 20),
                           Text(
                             HelperClass.skillsAndDescription[list]["title"],
@@ -134,6 +134,10 @@ class _SkillsMobileViewState extends State<SkillsMobileView> {
                                 color: hoverBloc.onChanged
                                     ? Colors.yellowAccent
                                     : Colors.white),
+                          ),
+                          const Text(
+                            "Tap to see more",
+                            style: TextStyle(color: Colors.yellowAccent),
                           )
                         ],
                       ),

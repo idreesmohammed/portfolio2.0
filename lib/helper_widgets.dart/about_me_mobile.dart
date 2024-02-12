@@ -6,8 +6,8 @@ class AboutMeMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-      height: MediaQuery.sizeOf(context).height * 0.8,
+      margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+      height: MediaQuery.sizeOf(context).height * 0.85,
       constraints: const BoxConstraints(minHeight: 600),
       child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -26,7 +26,7 @@ class AboutMeMobile extends StatelessWidget {
             ),
             const Expanded(
               child: Text(
-                "Hi\nI'm Mohammed Idrees\nFlutter Developer.\nI love to build products that can be used by million of people",
+                "Hi\nI'm Mohammed Idrees\nFront-End Developer\nFlutter Developer.\nIf you think Math is hard\nTry UI Design.",
                 overflow: TextOverflow.ellipsis,
                 maxLines: 7,
                 style: TextStyle(

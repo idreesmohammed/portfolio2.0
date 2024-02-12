@@ -13,7 +13,7 @@ class AboutMeDesktop extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           const Text(
-            "Hi\nI'm Mohammed Idrees\nFlutter Developer.\nI love to build products\nthat can be used by\nmillion of people",
+            "Hi\nI'm Mohammed Idrees\nFront-End Developer\nFlutter Developer.\nIf you think\nMath is hard\nTry UI Design.",
             style: TextStyle(
               color: Colors.white,
               fontSize: 30,

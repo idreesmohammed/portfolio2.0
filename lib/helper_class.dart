@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HelperClass {
   static const List<String> headerList = [
     "Home",
     "Skills",
     "Projects",
-    "Contact Me"
+    "Contact Me",
+    "View my CV"
   ];
   static const List<IconData> drawerIcons = [
     Icons.home,
-    Icons.home,
-    Icons.home,
-    Icons.home
+    FontAwesomeIcons.code,
+    FontAwesomeIcons.filePowerpoint,
+    FontAwesomeIcons.phone,
+    FontAwesomeIcons.file
   ];
   static const List<Map> skillsAndDescription = [
     {
