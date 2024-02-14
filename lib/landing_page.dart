@@ -80,21 +80,25 @@ class _LandingPageState extends State<LandingPage> {
               if (boxConstraints.maxWidth >= 600)
                 ContactMeWebView(key: headerKeys[3])
               else
-                ContactMeMobileView(key: headerKeys.last),
+                ContactMeMobileView(key: headerKeys[3]),
               if (boxConstraints.maxWidth >= 600)
-                const SizedBox(
-                    height: 70,
-                    child: Text(
-                      "<Developed using Flutter by Idrees/>",
-                      style: TextStyle(
-                          color: Colors.yellowAccent,
-                          fontWeight: FontWeight.w900),
-                    ))
+                const Center(
+                  child: SizedBox(
+                      height: 60,
+                      child: Text(
+                        "<Developed using Flutter by Idrees/>",
+                        style: TextStyle(
+                            color: Colors.yellowAccent,
+                            fontWeight: FontWeight.w900),
+                      )),
+                )
               else
-                const SizedBox(
-                  height: 50,
-                  child: Text("<Developed using Flutter by Idrees/>",
-                      style: TextStyle(color: Colors.yellowAccent)),
+                const Center(
+                  child: SizedBox(
+                    height: 50,
+                    child: Text("<Developed using Flutter by Idrees/>",
+                        style: TextStyle(color: Colors.yellowAccent)),
+                  ),
                 )
             ],
           ),

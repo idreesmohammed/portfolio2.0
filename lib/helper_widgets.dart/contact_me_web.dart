@@ -1,8 +1,15 @@
 // ignore_for_file: avoid_web_libraries_in_flutter
 
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'dart:js' as js;
+
+import 'package:idreesportfolio/bloc/on_hover_bloc.dart';
+import 'package:idreesportfolio/bloc/on_hover_event.dart';
+import 'package:idreesportfolio/bloc/on_hover_state.dart';
+import 'package:idreesportfolio/helper_class.dart';
 
 class ContactMeWebView extends StatelessWidget {
   const ContactMeWebView({super.key});
@@ -10,66 +17,42 @@ class ContactMeWebView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: 250,
+        height: 110,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            InkWell(
-              onTap: () {
-                js.context
-                    .callMethod('open', ['https://github.com/idreesmohammed']);
-              },
-              child: SizedBox(
-                height: 100,
-                width: 100,
-                child: LottieBuilder.asset(
-                    "assets/Animation - 1707014496431.json"),
-              ),
-            ),
-            const SizedBox(width: 7),
-            InkWell(
-              onTap: () {
-                js.context.callMethod(
-                    'open', ['https://www.instagram.com/mohammed___idrees21/']);
-              },
-              child: SizedBox(
-                height: 100,
-                width: 100,
-                child: LottieBuilder.asset(
-                    "assets/Animation - 1707014893376.json"),
-              ),
-            ),
-            const SizedBox(width: 7),
-            InkWell(
-              onTap: () {
-                js.context.callMethod('open',
-                    ['https://www.linkedin.com/in/mohammed-idrees-757034184']);
-              },
-              child: SizedBox(
-                height: 100,
-                width: 100,
-                child: LottieBuilder.asset(
-                    "assets/Animation - 1707015011727.json"),
-              ),
-            ),
-            const SizedBox(width: 7),
-            InkWell(
-              onTap: () {
-                String toMailId = 'mohammedidrees21@gmail.com';
-                String subject = "";
-                String body = "";
-                js.context.callMethod(
-                    'open', ['mailto:$toMailId?subject=$subject&body=$body']);
-              },
-              child: SizedBox(
-                height: 100,
-                width: 100,
-                child: LottieBuilder.asset(
-                    "assets/Animation - 1707015068164.json"),
-              ),
-            )
+            const SizedBox(width: 20),
+            for (int i = 0; i < HelperClass.socialMedia.length; i++)
+              customInkWell(i),
           ],
         ));
+  }
+
+  customInkWell(int i) {
+    HoverBloc bloc = HoverBloc();
+    return BlocBuilder<HoverBloc, HoverState>(
+      bloc: bloc,
+      builder: (context, state) {
+        return Row(
+          children: [
+            InkWell(
+              onTap: () {
+                js.context.callMethod('open', [HelperClass.socialMedia[i]]);
+              },
+              onHover: (val) {
+                bloc.add(OnHoverActionEvent());
+              },
+              child: SizedBox(
+                child: FaIcon(HelperClass.socialMediaIcons[i],
+                    size: 50,
+                    color: bloc.onChanged ? Colors.yellowAccent : Colors.white),
+              ),
+            ),
+            const SizedBox(width: 25),
+          ],
+        );
+      },
+    );
   }
 }

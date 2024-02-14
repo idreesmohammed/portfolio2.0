@@ -136,4 +136,17 @@ class HelperClass {
       "url": ""
     },
   ];
+
+  static const List socialMediaIcons = [
+    FontAwesomeIcons.github,
+    FontAwesomeIcons.instagram,
+    FontAwesomeIcons.linkedin,
+    FontAwesomeIcons.envelope,
+  ];
+  static const List<String> socialMedia = [
+    "https://github.com/idreesmohammed",
+    "https://www.instagram.com/mohammed___idrees21/",
+    "https://www.linkedin.com/in/mohammed-idrees-757034184",
+    "mailto:mohammedidrees21@gmail.com?subject=" "&body=" ""
+  ];
 }
