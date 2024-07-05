@@ -29,7 +29,6 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, BoxConstraints boxConstraints) {
-      print(boxConstraints);
       return Scaffold(
         backgroundColor: const Color(0xff021227),
         key: scaffoldKey,
@@ -110,7 +109,7 @@ class _LandingPageState extends State<LandingPage> {
   void scrollSection(int headerIndex) {
     if (headerIndex == 4) {
       js.context.callMethod('open', [
-        'https://drive.google.com/file/d/1hRTjTMp-l71xCyEseFOZXPSNeA07qGxe/view?usp=drivesdk'
+        'https://drive.google.com/file/d/1XMJYVf_q882VPlkS6_87VBlwbpkuJrLi/view?usp=sharing'
       ]);
       return;
     }

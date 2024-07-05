@@ -1,8 +1,14 @@
+// ignore_for_file: avoid_web_libraries_in_flutter
+
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:idreesportfolio/helper_class.dart';
+import 'dart:js' as js;
 
 class ProjectsMobileView extends StatelessWidget {
-  const ProjectsMobileView({super.key});
+  ProjectsMobileView({super.key});
+  final analytics = FirebaseAnalytics.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -69,10 +75,17 @@ class ProjectsMobileView extends StatelessWidget {
                   const SizedBox(height: 10),
                   Align(
                     alignment: Alignment.bottomRight,
-                    child: Image.asset(
-                      "assets/GitHub-Mark-ea2971cee799-removebg-preview.png",
-                      height: 20,
-                      width: 20,
+                    child: InkWell(
+                      onTap: () {
+                        analytics.logEvent(name: 'Users looking');
+                        js.context.callMethod(
+                            'open', [HelperClass.gitHubProjectLink[list]]);
+                      },
+                      child: const FaIcon(
+                        FontAwesomeIcons.github,
+                        size: 20,
+                        color: Colors.yellowAccent,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 20),

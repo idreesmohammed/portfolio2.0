@@ -136,6 +136,14 @@ class HelperClass {
       "url": ""
     },
   ];
+  static const List<String> gitHubProjectLink = [
+    "https://github.com/idreesmohammed/googleMapDistanceCalculator",
+    "https://github.com/idreesmohammed/fakestoreshopping",
+    "https://github.com/idreesmohammed/flutterfooddelivery",
+    "https://github.com/idreesmohammed/memoapp",
+    "https://github.com/idreesmohammed/weather-bloc",
+    "https://github.com/idreesmohammed/portfolio2.0"
+  ];
 
   static const List socialMediaIcons = [
     FontAwesomeIcons.github,

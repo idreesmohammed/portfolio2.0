@@ -14,7 +14,8 @@ class CustomDivider extends StatelessWidget {
           const Expanded(child: Divider()),
           Text(
             " $text ",
-            style: const TextStyle(color: Colors.white),
+            style: const TextStyle(
+                color: Colors.white, fontWeight: FontWeight.w900),
           ),
           const Expanded(child: Divider()),
         ],

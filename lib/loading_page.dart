@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:idreesportfolio/landing_page.dart';
 
@@ -9,6 +10,8 @@ class LoadingScreen extends StatefulWidget {
 }
 
 class _LoadingScreenState extends State<LoadingScreen> {
+  FirebaseAnalytics analytics = FirebaseAnalytics.instance;
+
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 2), () {
@@ -18,11 +21,14 @@ class _LoadingScreenState extends State<LoadingScreen> {
             builder: (context) => const LandingPage(),
           ));
     });
+    analytics.setAnalyticsCollectionEnabled(true);
+
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    analytics.logEvent(name: 'Users looking');
     return Scaffold(
       backgroundColor: const Color(0xff021227),
       body: LayoutBuilder(builder: (context, constraints) {

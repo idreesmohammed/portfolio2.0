@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:idreesportfolio/helper_class.dart';
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:js' as js;
 
 class ProjectsWebView extends StatefulWidget {
   const ProjectsWebView({super.key});
@@ -83,10 +86,16 @@ class _ProjectsWebViewState extends State<ProjectsWebView> {
                   const SizedBox(height: 10),
                   Align(
                     alignment: Alignment.bottomRight,
-                    child: Image.asset(
-                      "assets/GitHub-Mark-ea2971cee799-removebg-preview.png",
-                      height: 20,
-                      width: 20,
+                    child: InkWell(
+                      onTap: () {
+                        js.context.callMethod(
+                            'open', [HelperClass.gitHubProjectLink[list]]);
+                      },
+                      child: const FaIcon(
+                        FontAwesomeIcons.github,
+                        size: 20,
+                        color: Colors.yellowAccent,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 20),
